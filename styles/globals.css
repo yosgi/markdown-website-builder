@@ -1,0 +1,197 @@
+:root{
+    --bg-color: var(--dark-background-color);
+    --txt-color: var(--dark-text-color);
+    --hla-color: var(--dark-accent-active-color);
+    --hlm-color: var(--dark-accent-mute-color);
+    --ff: var(--fontFamily);
+    --lh: 1.6em;
+    --column-gap: 17px;
+    --scrollbar-width: 8px;
+    --scrollbar-height: 3px;
+}
+
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--bg-color);
+    color: var(--txt-color);
+    font-family: var(--ff);
+    line-height: var(--lh);
+    -webkit-font-smoothing: antialiased;
+}
+
+body.light{
+    --bg-color: var(--light-background-color);
+    --txt-color: var(--light-text-color);
+    --hla-color: var(--light-accent-active-color);
+    --hlm-color: var(--light-accent-mute-color);
+}
+
+a, a:visited, a:hover, .text_column code{
+    color: var(--hla-color);
+}
+
+.logo-holder svg:not(.vac-logo),
+.logo-holder svg:not(.vac-logo) *,
+.icon svg:not(.vac-logo),
+.icon svg:not(.vac-logo) *,
+.button svg:not(.vac-logo),
+.button svg:not(.vac-logo) *{
+    fill: var(--txt-color);
+}
+
+::placeholder,
+:-ms-input-placeholder,
+::-ms-input-placeholder {
+    color: var(--txt-color);
+    opacity: 1;
+}
+
+button, .button{
+    cursor: pointer;
+}
+
+nav a,
+nav a:visited,
+nav a:hover{
+    text-decoration: none;
+    color: var(--txt-color);
+    text-transform: initial;
+}
+
+a:hover{
+    text-decoration: underline !important;
+}
+
+nav a.active{
+    text-decoration: underline;
+}
+
+.default-sidebar .sidebar-menu > li.level-0{
+    margin-bottom: 1em;
+}
+
+.default-sidebar .sidebar-menu > li.level-0  > .menuitem-title{
+    margin-bottom: 1em;
+}
+
+/*this part should be coming from the content but for now for sake of the look*/
+h1,h2,h3,h4,h5,h6{
+    font-size: inherit !important;
+}
+
+pre{
+    overflow-x: auto;
+    padding: 0;
+}
+
+pre:not(.logos-block-ascii),
+pre:not(.logos-block-mermaid),
+pre:not(.logos-block-mermaid-ascii){
+    border: 2px solid var(--hlm-color);
+}
+
+img, iframe{
+    -webkit-filter: url(#colored) grayscale(50%);
+    filter: url(#colored) grayscale(50%);
+    filter: gray;
+    filter: grayscale(1);
+    width: 100%;
+}
+
+img:hover, iframe:hover{
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+}
+
+.cap{
+    text-transform: capitalize;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+/**********/
+/*MARKDOWN*/
+
+
+/*CODE highlights*/
+.codeStyle{
+    margin: 0 !important;
+    border-radius: 0 !important;
+}
+pre{
+    padding: var(--lh);
+    overflow-y: hidden;
+}
+
+pre:not(:hover) > *{
+    background: transparent !important;
+    filter: grayscale(1);
+}
+
+.logos-ascii{
+    white-space: pre;
+}
+
+.copy-left{
+    display: inline-block;
+    text-align: right;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+table, th, td {
+    border: 1px solid;
+}
+
+table {
+    width: 100%;
+}
+
+td{
+    padding: calc(var(--column-gap) / 4);
+}
+
+::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+    height: var(--scrollbar-height);
+}
+::-webkit-scrollbar-button { background-color: var(--hlm-color);}
+::-webkit-scrollbar-track {  background-color: var(--hlm-color)}
+::-webkit-scrollbar-track-piece { background-color: var(--bg-color)}
+::-webkit-scrollbar-thumb {
+    height: 50px;
+    background-color: var(--hlm-color);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-corner { background-color: var(--hlm-color)}
+::-webkit-resizer { background-color: var(--hlm-color)}
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hidden-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hidden-scroll{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+#nprogress .bar{
+    z-index: 999999999 !important;
+}
+
+@media (min-width:600px) {
+    :root{
+        --column-gap: 2.2vw;
+    }
+}

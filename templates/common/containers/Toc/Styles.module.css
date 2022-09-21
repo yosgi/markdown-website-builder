@@ -1,0 +1,12 @@
+.container{
+    grid-area: toc;
+}
+.tocComponent{
+}
+
+.tocComponent :global(.h-3) a{
+    white-space: pre !important;
+}
+
+@media (min-width:600px) {
+}

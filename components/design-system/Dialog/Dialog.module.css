@@ -1,0 +1,10 @@
+.container{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background: var(--bg-color);
+    z-index: 99999999999;
+    overflow-y: auto;
+}
